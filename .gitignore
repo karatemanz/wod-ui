@@ -1,0 +1,4 @@
+# root level ignores
+node_modules/
+
+# project level ignores
