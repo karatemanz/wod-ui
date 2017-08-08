@@ -1,0 +1,33 @@
+<header>
+  <h1>TOUR OF HEROES: DOCKER ADDITION</h1>
+</header>
+
+<nav>
+  <a routerLink="/" routerLinkActive="active">
+    Index
+  </a>
+  <a routerLink="/home">
+    Home
+  </a>
+  <a routerLink="/detail">
+    Detail
+  </a>
+  <a routerLink="/barrel">
+     Barrel
+  </a>
+  <a routerLink="/about">
+    About
+  </a>
+  <a routerLink="/dashboard">
+    Dashboard
+  </a>
+  <a routerLink="/heroes">
+    Heroes
+  </a>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
