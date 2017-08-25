@@ -8,8 +8,7 @@
 # THANKS
 
   <name>
-  PatrickJS -- @gdi2290
-  AngularClass -- @AngularClass
+  Tour of Heroes: Docker Addition
 
 # TECHNOLOGY COLOPHON
 

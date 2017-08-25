@@ -1,0 +1,36 @@
+.jumbotron > .h1-responsive {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.jumbotron > .h2-responsive {
+  text-align: center;
+  vertical-align: middle;
+  color: #4D4D4D;
+}
+
+.jumbotron > .h2-responsive .wordofday {
+  text-align: center;
+  vertical-align: middle;
+  color: #FF0000;
+  font-weight: bold;
+}
+
+.quote {
+  text-align: center;
+  vertical-align: middle;
+  color: #4D4D4D;
+  font-style: italic;
+}
+
+.btn .btn-primary .btn-lg {
+  text-align: center;
+  vertical-align: middle;
+  color: #FFFFFF;
+}
+
+.word-info {
+  vertical-align: bottom;
+  text-align: right;
+  color: #4D4D4D;
+}

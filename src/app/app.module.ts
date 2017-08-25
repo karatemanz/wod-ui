@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Platform and Environment providers/directives/pipes
 import { ENV_PROVIDERS } from './environment';
@@ -17,14 +18,20 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+import { HeaderComponent } from './main-header/main-header.component';
 
 // Heroes based components
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroService } from './hero/hero.service';
+
+// Word based components
+import { WordOfDayComponent } from './wordofday/wordofday.component';
+import { WordOfDayService } from './wordofday/wordofday.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -50,11 +57,13 @@ type StoreType = {
  */
 @NgModule({
   bootstrap: [ AppComponent ],
-  declarations: [ AppComponent, AboutComponent, HomeComponent, NoContentComponent, XLargeDirective, DashboardComponent, HeroDetailComponent, HeroesComponent ],
+  declarations: [ AppComponent, HomeComponent, AboutComponent, WordOfDayComponent, NoContentComponent, XLargeDirective, DashboardComponent, HeroDetailComponent, HeroesComponent, HeaderComponent ],
   // Import Angular's modules.
-  imports: [ BrowserModule, FormsModule, HttpModule, AppRoutingModule, InMemoryWebApiModule.forRoot(InMemoryDataService) ],
+  imports: [ BrowserModule, FormsModule, HttpModule, AppRoutingModule, NgbModule.forRoot(), InMemoryWebApiModule.forRoot(InMemoryDataService, {
+    passThruUnknownUrl: true
+  }) ],
   // Expose our Services and Providers into Angular's dependency injection.
-  providers: [ ENV_PROVIDERS, APP_PROVIDERS, HeroService ]
+  providers: [ ENV_PROVIDERS, APP_PROVIDERS, HeroService, WordOfDayService ]
 })
 export class AppModule {
 

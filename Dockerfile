@@ -25,6 +25,7 @@ RUN apk add --no-cache bash=4.3.46-r5 &&\
 # install npm ( in separate dir due to docker cache)
 ADD package.json /tmp/npm_inst/package.json
 RUN cd /tmp/npm_inst &&\
+    npm install --save @ng-bootstrap/ng-bootstrap &&\
     npm install &&\
     mkdir -p /tmp/app &&\
     mv /tmp/npm_inst/node_modules /tmp/app/

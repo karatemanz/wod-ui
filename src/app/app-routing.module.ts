@@ -3,23 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DataResolver } from './app.resolver';
 
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
+//import { HomeComponent } from './home';
+//import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { WordOfDayComponent } from './wordofday/wordofday.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'home',  component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'detail', loadChildren: './+detail#DetailModule'},
-  { path: 'barrel', loadChildren: './+barrel#BarrelModule'},
+  { path: '', redirectTo: '/wordofday', pathMatch: 'full' },
+  //{ path: 'home',  component: HomeComponent },
+  //{ path: 'about', component: AboutComponent },
+  { path: 'wordofday', component: WordOfDayComponent },
+  // { path: 'detail', loadChildren: './+detail#DetailModule'},
+  // { path: 'barrel', loadChildren: './+barrel#BarrelModule'},
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes',     component: HeroesComponent },
-  { path: '**',    component: NoContentComponent }
+  //{ path: '**',    component: NoContentComponent },
 ];
 
 @NgModule({
